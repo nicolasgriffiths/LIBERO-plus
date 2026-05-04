@@ -16,12 +16,4 @@ setup(
     version="0.1.0",
     long_description="LIBERO-plus",
     long_description_content_type="text/markdown",
-    entry_points={
-        "console_scripts": [
-            "lifelong.main=libero.lifelong.main:main",
-            "lifelong.eval=libero.lifelong.evaluate:main",
-            "libero.config_copy=scripts.config_copy:main",
-            "libero.create_template=scripts.create_template:main",
-        ]
-    },
 )

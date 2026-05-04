@@ -102,7 +102,7 @@ def plasma_fractal(mapsize=256, wibbledecay=3):
     'mapsize' must be a power of two.
     """
     assert (mapsize & (mapsize - 1) == 0)
-    maparray = np.empty((mapsize, mapsize), dtype=np.float_)
+    maparray = np.empty((mapsize, mapsize), dtype=np.float64)
     maparray[0, 0] = 0
     stepsize = mapsize
     wibble = 100
@@ -236,7 +236,7 @@ class ControlEnv:
             bddl_file_name
         ), f"[error] {bddl_file_name} does not exist!"
 
-        controller_configs = suite.load_controller_config(default_controller=controller)
+        controller_configs = suite.load_composite_controller_config(robot=robots[0])
 
         problem_info = BDDLUtils.get_problem_info(bddl_file_name)
         # Check if we're using a multi-armed environment and use env_configuration argument if so
